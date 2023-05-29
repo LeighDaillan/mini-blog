@@ -14,12 +14,9 @@ if(isset($_REQUEST["new_post"])) {
   $date = date('d') . 'th of ' . date('F, Y') . ' at ' . date('G:i:s');
   
 
-  echo $title . $content . $author;
-
   $sql = "INSERT INTO blog_posts(title, content, author, created_at) VALUES ('$title', '$content', '$author', '$date')";
 
   mysqli_query($conn, $sql);
-
   header('Location: /index.php?info=added');
 }
 
